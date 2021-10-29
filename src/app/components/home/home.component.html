@@ -1,0 +1,120 @@
+<div class="slider-container">
+  <app-slider></app-slider>
+</div>
+<div id="top-movie-sections">
+  <h1>What to watch</h1>
+  <section class="top-movies">
+    <div class="movies-container">
+      <h2>
+        <a [routerLink]="['/movies']" routerLinkActive="router-link-active"
+          >Top Rated Movies</a
+        >
+      </h2>
+      <p-carousel
+        [value]="topRatedMovies"
+        [numVisible]="6"
+        [numScroll]="4"
+        [circular]="false"
+        [responsiveOptions]="responsiveOptions"
+      >
+        <ng-template let-movie pTemplate="item">
+          <div class="movie-info-container">
+            <div class="position">
+              <img
+                src="https://image.tmdb.org/t/p/w500/{{ movie?.poster_path }}"
+                alt="Movie Poster"
+              />
+              <p class="release-date vote-date">
+                {{ movie?.release_date | date: "yyyy" }}
+              </p>
+              <p class="vote-average vote-date">
+                <i class="material-icons">star</i>
+                {{ movie?.vote_average }}
+              </p>
+            </div>
+            <h4 class="movie-title">{{ movie?.title }}</h4>
+
+            <app-add-movie [movie]="movie"></app-add-movie>
+            <button class="overlay" [routerLink]="['/movies/', movie.id]">
+              See details
+            </button>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </section>
+
+  <section class="top-movies">
+    <div class="movies-container">
+      <h2><a [routerLink]="['/movies']">Popular Movies</a></h2>
+      <p-carousel
+        [value]="popularMovies"
+        [numVisible]="6"
+        [numScroll]="4"
+        [circular]="false"
+        [responsiveOptions]="responsiveOptions"
+      >
+        <ng-template let-popular pTemplate="item">
+          <div class="movie-info-container">
+            <div class="position">
+              <img
+                class="movie-poster"
+                src="https://image.tmdb.org/t/p/w500/{{ popular?.poster_path }}"
+                alt="Movie Poster"
+              />
+              <p class="release-date vote-date">
+                {{ popular?.release_date | date: "yyyy" }}
+              </p>
+              <p class="vote-average vote-date">
+                <i class="material-icons">star</i>
+                {{ popular?.vote_average }}
+              </p>
+            </div>
+            <h4 class="movie-title">{{ popular?.title }}</h4>
+            <app-add-movie [movie]="popular"></app-add-movie>
+            <button class="overlay" [routerLink]="['/movies/', popular.id]">
+              See details
+            </button>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </section>
+
+  <section class="top-movies">
+    <div class="movies-container">
+      <h2><a [routerLink]="['/movies']">UpComing Movies</a></h2>
+      <p-carousel
+        [value]="upcomingMovies"
+        [numVisible]="6"
+        [numScroll]="4"
+        [circular]="false"
+        [responsiveOptions]="responsiveOptions"
+      >
+        <ng-template let-movie pTemplate="item">
+          <div class="movie-info-container">
+            <div class="position">
+              <img
+                class="movie-poster"
+                src="https://image.tmdb.org/t/p/w500/{{ movie?.poster_path }}"
+                alt="Movie Poster"
+              />
+              <p class="release-date vote-date">
+                {{ movie?.release_date | date: "yyyy" }}
+              </p>
+              <p class="vote-average vote-date">
+                <i class="material-icons">star</i>
+                {{ movie?.vote_average }}
+              </p>
+            </div>
+            <h4 class="movie-title">{{ movie?.title }}</h4>
+            <app-add-movie [movie]="movie"></app-add-movie>
+            <button class="overlay" [routerLink]="['/movies/', movie.id]">
+              See details
+            </button>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </section>
+</div>

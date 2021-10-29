@@ -1,0 +1,145 @@
+@import "../../../assets/vars";
+@import "../../../assets/mixins";
+
+.wtl-movie-box {
+  width: 100%;
+  height: 500px;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+  border-bottom: solid 1px rgb(177, 177, 177);
+  position: relative;
+
+  @include respond(mobile) {
+    height: auto;
+    flex-direction: column;
+  }
+
+  @include respond(tablet) {
+  }
+}
+
+.wtl-movie-poster {
+  height: 100%;
+  margin-right: 10px;
+  position: relative;
+
+  @include respond(mobile) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.wtl-movie-info {
+  width: 60%;
+
+  @include respond(mobile) {
+    width: 100%;
+  }
+
+  .wtl-movie-title {
+    color: $dark-blue;
+    font-size: 2em;
+    margin-bottom: 1em;
+
+    @include respond(mobile) {
+      margin-top: 1em;
+    }
+  }
+
+  .wtl-movie-details {
+    display: flex;
+    color: gray;
+
+    .wtl-info {
+      margin-right: 20px;
+      padding-right: 20px;
+      border-right: 1px solid gray;
+    }
+
+    .wtl-language {
+      text-transform: uppercase;
+    }
+  }
+
+  .wtl-vote-average {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .material-icons {
+      color: $secondary-color;
+    }
+  }
+
+  .vote {
+    color: $primary-color;
+  }
+
+  .wtl-movie-overview {
+    font-family: $primary-font;
+    font-size: 1.2em;
+    color: $dark-blue;
+  }
+
+  .button {
+    background-color: $secondary-color;
+    color: $white;
+    font-size: 1em;
+    font-family: $primary-font;
+    border: none;
+    width: 100px;
+    height: 36px;
+    border-radius: 4px;
+    transition: ease-in-out 0.2s;
+    margin-right: 2em;
+
+    &:hover {
+      background-color: $white;
+      color: $dark-blue;
+    }
+  }
+}
+
+.no-content p {
+  font-size: 1.1em;
+}
+
+#buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 4em;
+}
+
+#delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .form-check-input {
+    height: 1.5em;
+    width: 3em;
+    cursor: pointer;
+
+    &:checked {
+      background-color: $dark-blue;
+      border-color: $dark-blue;
+    }
+  }
+
+  .form-check-label {
+    text-align: center;
+    font-size: 1.1em;
+    margin-left: 5px;
+  }
+}

@@ -1,0 +1,15 @@
+<div class="watchlist-body">
+  <h1>My Watchlist</h1>
+  <section id="watchlist-section">
+    <div *ngIf="watchlistMovies.length == 0" class="no-content">
+      <p>There is no movie in the watchlist</p>
+    </div>
+    <div class="wtl-movie-box" *ngFor="let movies of watchlistMovies">
+      <app-watchlist-item
+        [movie]="movies"
+        (onDeleteMovie)="deleteMovie(movies)"
+        (onToggleMovie)="toggleSeen(movies)"
+      ></app-watchlist-item>
+    </div>
+  </section>
+</div>

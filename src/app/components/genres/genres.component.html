@@ -1,0 +1,9 @@
+<h4>genres</h4>
+<ul class="category-list">
+  <a
+    *ngFor="let genre of genreList"
+    routerLink="/genres/{{ genre.id }}/{{ genre.name }}"
+  >
+    <li>{{ genre.name }}</li>
+  </a>
+</ul>

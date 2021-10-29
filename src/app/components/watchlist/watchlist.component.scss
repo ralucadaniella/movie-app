@@ -1,0 +1,41 @@
+@import "../../../assets/vars";
+@import "../../../assets/mixins";
+
+.watchlist-body {
+  background-color: $primary-color;
+  position: relative;
+  padding: 4em;
+
+  @include respond(mobile) {
+    padding: 4em 1em;
+  }
+
+  h1 {
+    text-align: center;
+    color: $white;
+    font-size: 2.4em;
+    font-family: $primary-font;
+
+    @include respond(mobile) {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+#watchlist-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 6em auto;
+  padding: 6em;
+  background-color: $gray-color;
+  height: auto;
+
+  @include respond(mobile) {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 141.7 141.7" style="enable-background:new 0 0 141.7 141.7;" xml:space="preserve">
+<rect x="9.8" y="35.2" style="fill:#FFFFFF;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" width="30.7" height="16.8"/>
+<text transform="matrix(1 0 0 1 18.2452 45.2077)" style="font-family:'MyriadPro-Regular'; font-size:5.6698px;">Client</text>
+<rect x="56.2" y="35.2" style="fill:#FFFFFF;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" width="30.7" height="16.8"/>
+<text transform="matrix(1 0 0 1 59.6855 45.2078)" style="font-family:'MyriadPro-Regular'; font-size:5.6698px;">Controller</text>
+<rect x="56.2" y="67.6" style="fill:#FFFFFF;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" width="30.7" height="16.8"/>
+<text transform="matrix(1 0 0 1 63.1777 77.6606)" style="font-family:'MyriadPro-Regular'; font-size:5.6698px;">Model</text>
+<rect x="56.2" y="99.5" style="fill:#FFFFFF;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" width="30.7" height="16.8"/>
+<text transform="matrix(1 0 0 1 63.1777 109.5756)" style="font-family:'MyriadPro-Regular'; font-size:5.6698px;">Model</text>
+<rect x="103.9" y="35.2" style="fill:#FFFFFF;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" width="30.7" height="16.8"/>
+<text transform="matrix(1 0 0 1 110.8783 45.2077)" style="font-family:'MyriadPro-Regular'; font-size:5.6698px;">Service</text>
+<rect x="104.4" y="67.5" style="fill:#FFFFFF;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" width="30.7" height="16.8"/>
+<text transform="matrix(1 0 0 1 111.3772 77.5096)" style="font-family:'MyriadPro-Regular'; font-size:5.6698px;">DB/API</text>
+<line style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" x1="42.4" y1="43.6" x2="52.6" y2="43.6"/>
+<polyline style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" points="52.2,41.9 53.7,43.6 52.2,45.1 "/>
+<polyline style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" points="22.7,55.6 24.5,54.1 26,55.6 "/>
+<line style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" x1="88.6" y1="43.6" x2="98.8" y2="43.6"/>
+<polyline style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" points="98.3,41.9 99.8,43.6 98.3,45.1 "/>
+<line style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" x1="119" y1="54.1" x2="119" y2="64.4"/>
+<polyline style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" points="120.7,63.9 118.9,65.4 117.4,63.9 "/>
+<line style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" x1="71.6" y1="54.1" x2="71.6" y2="64.4"/>
+<polyline style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" points="73.3,63.9 71.5,65.4 70,63.9 "/>
+<line style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" x1="71.6" y1="86" x2="71.6" y2="96.2"/>
+<polyline style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" points="73.3,95.7 71.5,97.2 70,95.7 "/>
+<polyline style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;" points="24.5,55.4 24.5,108.8 53.1,108.8 "/>
+</svg>

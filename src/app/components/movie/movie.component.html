@@ -1,0 +1,24 @@
+<div class="position">
+  <img
+    class="movie-poster"
+    *ngIf="movieItem?.poster_path"
+    src="https://image.tmdb.org/t/p/w500/{{ movieItem?.poster_path }}"
+    [alt]="movieItem.title"
+  />
+  <p class="vote-average vote-date">
+    <i class="material-icons">star</i>
+    <span>{{ movieItem?.vote_average }}</span> 
+  </p>
+  <p class="release-date vote-date">
+    <span>{{ movieItem?.release_date | date: "yyyy" }}</span>
+  </p>
+</div>
+<div class="movie-title">
+  <h5>{{ movieItem?.title }}</h5>
+</div>
+
+<app-add-movie [movie]="movieItem"></app-add-movie>
+
+<button class="overlay" [routerLink]="['/movies/', movieItem.id]">
+  See details
+</button>

@@ -1,0 +1,147 @@
+<div class="body">
+  <div class="movie-detail-container container-md mr-auto">
+    <div class="movie-detail-header row">
+      <div class="title-date col">
+        <h1>{{ movie?.title }}</h1>
+        <app-add-movie class="add-movie" [movie]="movie"></app-add-movie>
+      </div>
+      <div class="col vote-average">
+        <div class="rating pr-sm-5">
+          Rating
+          <div class="vote">
+            <i class="material-icons">star</i>
+            <span>{{ movie?.vote_average }} /10</span>
+          </div>
+        </div>
+        <div class="popularity">
+          Popularity
+          <div class="vote">
+            <i class="material-icons">show_chart</i>
+            <span>{{ movie?.popularity }} </span>
+          </div>
+        </div>
+      </div>
+      <div class="images">
+        <div class="poster-image">
+          <img
+            class="poster"
+            src="https://image.tmdb.org/t/p/w500/{{ movie?.poster_path }}"
+            alt="poster"
+          />
+        </div>
+
+        <div class="backdrop-container">
+          <img
+            class="backdrop"
+            src="https://image.tmdb.org/t/p/original/{{ movie?.backdrop_path }}"
+            alt="backdrop"
+          />
+          <div class="overlay-gradient"></div>
+          <button id="trailer" (click)="openTrailerMovie(this.video)">
+            <i class="material-icons">play_circle_filled</i>
+            See trailer
+          </button>
+        </div>
+      </div>
+      <div class="genres" *ngIf="movie?.genres.length">
+        <div *ngFor="let genre of movie?.genres">
+          <ul>
+            <li>
+              <a routerLink="/genres/{{ genre.id }}/{{ genre.name }}">{{
+                genre?.name
+              }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="overview col">
+          <h2>Storyline</h2>
+          <p>{{ movie?.overview }}</p>
+        </div>
+        <div class="movie-details col-lg col-xl-4">
+          <p>
+            Release Date <span>{{ movie?.release_date | date: "yyyy" }}</span>
+          </p>
+          <p>
+            Runtime <span>{{ movie?.runtime }} minutes</span>
+          </p>
+        </div>
+        <div class="extra-info">
+          <h4>
+            Status: <span>{{ movie?.status }}</span>
+          </h4>
+        </div>
+      </div>
+      <div class="media">
+        <div>
+          <button><i class="material-icons">image</i>Images</button>
+          <div class="movie_media">
+            <div *ngFor="let image of images">
+              <div class="image">
+                <img
+                  src="https://image.tmdb.org/t/p/w533_and_h300_bestv2/{{
+                    image?.file_path
+                  }}"
+                  alt="Movie Images"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button><i class="material-icons">videocam</i>Videos</button>
+          <div class="items movie_media">
+            <div class="item" *ngFor="let list of videos">
+              <div (click)="openTrailerMovie(list)" class="link">
+                <div class="image lazyloaded">
+                  <img
+                    class="lazyload"
+                    src="https://img.youtube.com/vi/{{
+                      list?.key
+                    }}/mqdefault.jpg"
+                  />
+                </div>
+                <div class="play-trailer">
+                  <div class="play__icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="48"
+                      height="48"
+                      viewBox="0 0 55 55"
+                    >
+                      <circle
+                        cx="27.5"
+                        cy="27.5"
+                        r="26.75"
+                        fill="none"
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                      />
+                      <path
+                        fill="none"
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M20.97 40.81L40.64 27.5 20.97 14.19v26.62z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="name">
+                    {{ list?.name }}
+                  </div>
+                </div>
+                <div class="type">
+                  {{ list?.type }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div id="movies-body">
+  <div class="grid-container">
+    <div class="d-flex input-group" id="search-form">
+      <input
+        class="form-control me-2"
+        type="text"
+        placeholder="Search for a movie..."
+        aria-label="Search"
+        [(ngModel)]="searchQuery"
+        name="searchQuery"
+        (keyup.enter)="searchMovies()"
+      />
+      <button
+        class="btn btn-outline-success search-button"
+        type="button"
+        (click)="searchMovies()"
+      >
+        Search
+      </button>
+    </div>
+    <div class="side-bar">
+      <app-genres></app-genres>
+    </div>
+    <div class="movies movies-container">
+      <div class="movie-box" *ngFor="let movieList of movies">
+        <app-movie [movieItem]="movieList"></app-movie>
+      </div>
+    </div>
+  </div>
+</div>

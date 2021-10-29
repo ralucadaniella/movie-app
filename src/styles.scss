@@ -1,1 +1,212 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$movie-app-primary: mat.define-palette(mat.$indigo-palette);
+$movie-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$movie-app-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$movie-app-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $movie-app-primary,
+      accent: $movie-app-accent,
+      warn: $movie-app-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($movie-app-theme);
+
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/primeng.min.css";
+@import "../src/assets/vars";
+@import "../src/assets/mixins";
+.body {
+  background-color: $primary-color;
+  color: $white;
+  font-family: $primary-font;
+}
+
+.watchlist {
+  position: absolute;
+  top: -1px;
+  left: -13px;
+  background: none;
+  border: none;
+  color: $secondary-color;
+  transition: 0.8s;
+}
+
+.watchlist:hover {
+  filter: brightness(3);
+  width: 40px;
+  height: 40px;
+}
+
+.overlay {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: $primary-color;
+  border: none;
+  font-size: 1.2em;
+  color: $secondary-color;
+  text-align: center;
+  filter: opacity(90%);
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  font-family: $primary-font;
+  font-weight: 500;
+
+  @include respond(tablet) {
+    width: 50%;
+    left: 25%;
+    opacity: 1;
+    background: $secondary-color;
+    color: $primary-color;
+    height: 30px;
+    border-radius: 5px;
+    bottom: 10px;
+  }
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+.p-carousel-items-container {
+  transform: translate3d(0%, 0px, 0px);
+}
+
+.p-ripple {
+  color: $white;
+  font-size: 1.8em;
+  margin: 10px;
+}
+
+.movie-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #262626;
+  height: 90px;
+  font-size: 1.4em;
+
+  @include respond(tablet) {
+    padding-bottom: 40px;
+    padding-top: 20px;
+  }
+}
+
+.movie-box {
+  width: 435px;
+  height: 800px;
+  position: relative;
+  margin: 3em 0;
+
+  @include respond(mobile) {
+    width: 300px;
+    height: auto;
+  }
+
+  @include respond(tablet) {
+    margin: 1em auto;
+    height: auto;
+  }
+}
+
+.movie-box img {
+  height: 650px;
+  width: 100%;
+
+  @include respond(mobile) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.position {
+  position: relative;
+
+  .movie-poster {
+    display: block;
+  }
+
+  .vote-date {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 1.2em;
+    color: $primary-color;
+    background-color: $secondary-color;
+    width: 80px;
+    border-radius: 3px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.release-date {
+  right: 1.2em;
+}
+
+.vote-average {
+  left: 1.2em;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.movie-title h5 {
+  font-size: 1em;
+  color: $white;
+  font-family: $primary-font;
+  text-align: center;
+}
+
+.side-bar {
+  grid-area: side-bar;
+  font-size: 1em;
+  color: $secondary-color;
+  padding-right: 6em;
+  padding-top: 5em;
+  position: sticky;
+  font-family: $primary-font;
+  position: sticky;
+
+  @include respond(mobile) {
+    padding-top: 50px;
+    padding-right: 0;
+  }
+
+  @include respond(tablet) {
+    flex-direction: row;
+    padding: 1em;
+  }
+}

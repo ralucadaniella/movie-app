@@ -1,0 +1,45 @@
+<div class="body">
+  <div class="section">
+    <div class="title">
+      <h1>
+        Genre : <span>{{ genreTitle }}</span>
+      </h1>
+    </div>
+    <div class="grid-container">
+      <div class="side-bar">
+        <app-genres></app-genres>
+      </div>
+      <div id="movies-genre-list">
+        <div class="movie-box" *ngFor="let movie of moviesGenre">
+          <div class="movie-container">
+            <div class="movie">
+              <div class="position">
+                <img
+                  class="movie-poster"
+                  *ngIf="movie?.poster_path"
+                  src="https://image.tmdb.org/t/p/w500/{{ movie?.poster_path }}"
+                  [alt]="movie.title"
+                />
+                <p class="vote-average vote-date">
+                  <i class="material-icons">star</i>
+                  <span>{{ movie?.vote_average }}</span> /10
+                </p>
+                <p class="release-date vote-date">
+                  <span>{{ movie?.release_date | date: "yyyy" }}</span>
+                </p>
+              </div>
+              <div class="movie-title">
+                <h5>{{ movie?.title }}</h5>
+              </div>
+
+              <app-add-movie [movie]="movie"></app-add-movie>
+              <button class="overlay" [routerLink]="['/movies/', movie.id]">
+                See details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

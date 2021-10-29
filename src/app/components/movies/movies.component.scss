@@ -1,0 +1,94 @@
+@import "../../../assets/vars";
+@import "../../../assets/mixins";
+
+#movies-body {
+  background-color: $primary-color;
+  color: $white;
+  position: relative;
+  padding-top: 3em;
+
+  @include respond(mobile) {
+    padding-top: 1em;
+  }
+}
+
+.grid-container {
+  max-width: 1900px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr;
+  margin: 0 auto;
+  grid-template-areas:
+    ". search"
+    "side-bar content";
+  padding: 5em 0;
+
+  @include respond(mobile) {
+    max-width: 480px;
+    padding: 1em 1em;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "search"
+      "side-bar"
+      "content";
+  }
+
+  @include respond(tablet) {
+    // max-width: 600px;
+    grid-template-areas:
+      "search"
+      "side-bar"
+      "content";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin: 0 auto;
+  }
+}
+
+.movies-container {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 16px;
+  margin: 0 auto;
+
+  @include respond(mobile) {
+    grid-template-columns: 1fr;
+  }
+
+  @include respond(tablet) {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#search-form {
+  grid-area: search;
+  margin-bottom: 3em;
+  width: 50%;
+  justify-self: center;
+
+  @include respond(mobile) {
+    margin-bottom: 0;
+    width: 300px;
+  }
+
+  @include respond(tablet) {
+    width: 80%;
+    margin-bottom: 1em;
+  }
+}
+
+.search-button {
+  color: $secondary-color;
+  border-color: $secondary-color;
+
+  &:hover {
+    background-color: $secondary-color;
+    color: white;
+  }
+}

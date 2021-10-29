@@ -1,0 +1,29 @@
+<div class="slider-container">
+  <ng-container *ngFor="let slider of movies; let i = index">
+    <div id="slider" *ngIf="current == i" @fade>
+      <div class="backdrop">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ slider?.backdrop_path }}"
+          alt=""
+        />
+      </div>
+      <div class="slider-info">
+        <div class="title">
+          <h1>{{ slider?.title }}</h1>
+        </div>
+        <div class="meta-info">
+          <div class="vote_date">
+            <span>{{ slider?.vote_average }} /10</span>
+            <span>{{ slider?.release_date | date: "yyyy" }}</span>
+          </div>
+          <div class="overview">
+            <p>{{ slider?.overview }}</p>
+          </div>
+          <button [routerLink]="['/movies/', slider.id]" class="button">
+            See details
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

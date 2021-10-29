@@ -1,0 +1,73 @@
+@import "../../../assets/vars";
+@import "../../../assets/mixins";
+
+.section {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 6em 0;
+
+  @include respond(tablet) {
+    max-width: 550px;
+    padding: 2em 1em;
+  }
+}
+
+.title {
+  font-family: $primary-font;
+
+  @include respond(tablet) {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 1.6em;
+
+    span {
+      font-size: 1.2em;
+      color: $secondary-color;
+    }
+  }
+}
+
+#movies-genre-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 16px;
+
+  @include respond(tablet) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+.grid-container {
+  max-width: 2200px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr;
+  margin: 0 auto;
+  grid-template-areas: "side-bar content";
+  padding: 5em 0;
+
+  @include respond(mobile) {
+    padding: 1em 0;
+    max-width: 460px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "side-bar"
+      "content";
+  }
+
+  @include respond(tablet) {
+    padding: 1em 1em;
+    max-width: 460px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "side-bar"
+      "content";
+  }
+}
