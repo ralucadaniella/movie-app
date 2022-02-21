@@ -5,6 +5,7 @@
   background-color: $primary-color;
   position: relative;
   padding: 4em;
+  height: 100vh;
 
   @include respond(mobile) {
     padding: 4em 1em;
